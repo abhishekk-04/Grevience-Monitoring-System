@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/track.css">
+    <!-- FontAwesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest"> 
+    <title>Tracking</title>
+</head>
+<body>
+    <h1 class="header">Grevience Monitoring System</h1>
+    <nav class="bar">       <!--- Nav bar --->
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="activa" ><i class="fa fa-fw fa-home"></i>Home</a>
+            <a href="about.html" ><i class="fa fa-fw fa-info"></i>About</a>
+            <a href="contact.html"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+            <a href="faq.html"><i class="fa fa-fw fa-search"></i>FAQs</a>
+            <a href="#login" id="login-btn" class="right"><i class="fa fa-fw fa-user"></i>Login</a>
+            <a href="#signin" id="signup-btn" class="right"><i class="fa fa-fw fa-sign-in"></i>Sign Up</a>
+            <!-- Dark Mode Toggle -->
+            <a href="#theme"  class="dark-mode-toggle" id="dark-mode-toggle" > <img src="assets/dark-mode-icon.png" alt="Dark Mode" id="dark-mode-icon">Theme</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
+             
+          </div>
+    </nav>
+    
+        <!-- Grievance Tracking Page -->
+<div class="container" id="tracking-page">
+    <h2>Track Your Grievance</h2>
+    <form id="tracking-form">
+        <div class="form-group">
+            <label for="grievance-number">Grievance Number:</label>
+            <input type="text" placeholder="123456" id="grievance-number" name="grievance-number" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID:</label>
+            <input type="email" placeholder="user@example.com" id="email" name="email" required>
+        </div>
+        <button type="submit">Track Grievance</button>
+    </form>
+    <!-- Patience and Thank You Note -->
+    <div class="patience-note" id="patience">
+        <p>Thank you for your patience while we review your grievance. We are committed to resolving your issues as soon as possible.</p>
+        <p>We appreciate your understanding and cooperation during this process. If you need further assistance, please don't hesitate to contact us.</p>
+    </div>
+    <div id="tracking-result" style="display:none;">
+        <h3>Grievance Status</h3>
+        <p id="status-message"></p>
+        <button id="back-button">Return to Home</button>
+    </div>
+</div>
+
+
+         <!-- Login Popup Form -->
+         <div id="login-popup" class="popup form-group">
+            <div class="popup-content">
+                <span class="close" id="login-close">&times;</span>
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input  type="text" id="username" required>
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+    
+                    <button type="submit">Login</button>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Sign Up Popup Form -->
+        <div id="signup-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="signup-close">&times;</span>
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="new-username">Username:</label>
+                    <input type="text" id="new-username" required>
+    
+                    <label for="new-password">Password:</label>
+                    <input type="password" id="new-password" required>
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+    
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p class="switch-form">Already a user? <a href="#" id="switch-to-login">Login</a></p>
+            </div>
+        </div>
+    <!--Footer of Website-->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <!-- Section 1: About Us -->
+            <div class="footer-section about">
+                <h4>About Us</h4>
+                <p>Our Grievance Monitoring System ensures transparency and efficiency in addressing public issues. We strive to provide a platform that encourages accountability.</p>
+                <p>Developed by Abhishek</p>
+            </div>
+    
+            <!-- Section 2: Quick Links -->
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="register.html">Register Grievance</a></li>
+                    <li><a href="tracking.html">Track Grievance</a></li>
+                    <li><a href="#" id="login-btn2">Login</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+    
+            <!-- Section 3: Newsletter -->
+            <div class="footer-section newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <p>Get the latest updates and insights directly in your inbox.</p>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button class="Newsletter-button" type="submit">Subscribe</button>
+                </form>
+            </div>
+    
+             <!-- Section 4: Contact Us with FontAwesome Icons -->
+                 <div class="footer-section contact">
+                      <h4>Contact Us</h4>
+                      <p><i class="fas fa-phone"></i> Phone: +91 1234567890</p>
+                      <p><i class="fas fa-envelope"></i> Email: support@grievanceportal.com</p>
+                     <p><i class="fas fa-map-marker-alt"></i> Address: New Delhi, India</p>
+                   <div class="social-links">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                   </div>
+                 </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Public Grievance Monitoring System | All Rights Reserved </p>
+        </div>
+    </footer>
+    <script src="javascript/track.js"></script>
+</body>
+</html>

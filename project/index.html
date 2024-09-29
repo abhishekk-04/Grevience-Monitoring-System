@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- FontAwesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest"> 
+   <title>Public Monitoring System</title>
+</head>
+<body>
+    <h1 class="header">Grevience Monitoring System</h1>
+    <nav class="bar">       <!--- Nav bar --->
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="activa"><i class="fa fa-fw fa-home"></i>Home</a>
+            <a href="about.html"><i class="fa fa-fw fa-info"></i>About</a>
+            <a href="contact.html"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+            <a href="faq.html"><i class="fa fa-fw fa-search"></i>FAQs</a>
+            <a href="#" id="login-btn" ><i class="fa fa-fw fa-user"></i>Login</a>
+            <a href="#" id="signup-btn" ><i class="fa fa-fw fa-sign-in"></i>Sign Up</a>
+            <!-- Dark Mode Toggle -->
+            <a href="#theme"  class="dark-mode-toggle" id="dark-mode-toggle" > <img src="assets/dark-mode-icon.png" alt="Dark Mode" id="dark-mode-icon">Theme</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
+             
+          </div>
+    </nav>
+<div class="content" >
+    
+        <h1>Welcome to our Public Grievance Monitoring System,</h1>
+        <p>where citizens can easily report issues, track progress, and ensure their voices are heard.</p>
+    </div></div>
+
+    <div class="gallery">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="mySlides">
+                <img src="assets/image1.jpeg" class="responsive-image">
+                <div class="text">Grievance Submission Made Easy</div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="mySlides">
+                <img src="assets/image2.jpeg" class="responsive-image">
+                <div class="text">Track Your Grievances Effortlessly</div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="mySlides">
+                <img src="assets/image3.jpeg" class="responsive-image">
+                <div class="text">Stay Updated on Resolution Progress</div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="mySlides">
+                <img src="assets/image4.jpeg" class="responsive-image">
+                <div class="text">Collaborate for a Better Community</div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="mySlides">
+                <img src="assets/image5.jpeg" class="responsive-image">
+                <div class="text">Resolve Issues Faster Than Ever</div>
+            </div>
+    
+            <!-- Navigation Arrows -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    
+        <!-- Dots for Navigation -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+</div>
+
+         <!-- Login Popup Form -->
+         <div id="login-popup" class="popup form-group">
+            <div class="popup-content">
+                <span class="close" id="login-close">&times;</span>
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input  type="text" id="username" required>
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+    
+                    <button type="submit">Login</button>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Sign Up Popup Form -->
+        <div id="signup-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="signup-close">&times;</span>
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="new-username">Username:</label>
+                    <input type="text" id="new-username" required>
+    
+                    <label for="new-password">Password:</label>
+                    <input type="password" id="new-password" required>
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+    
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p class="switch-form">Already a user? <a href="#" id="switch-to-login">Login</a></p>
+            </div>
+        </div>
+    
+
+<div id="card" class="card-container">
+    <div class="card card-register">
+        <h3>Register Your Grievance</h3>
+        <p>Submit your grievance quickly and easily. Fill out the form to get started.</p>
+        <a href="register.html" class="card-button">Register Now</a>
+    </div>
+    <div class="card card-track">
+        <h3>Track Your Grievance</h3>
+        <p>Stay updated on the status of your grievance. Enter your ID to track it.</p>
+        <a href="tracking.html" class="card-button">Track Now</a>
+    </div>
+</div>
+
+<div class="card-container bottom-row">
+    <div class="card card-login">
+        <h3>Login</h3>
+        <p>Access your account to manage your grievances.</p>
+        <a href="#" id="login-btn1" class="card-button">Login Here</a>
+    </div>
+    <div class="card card-contact">
+        <h3>Contact Us</h3>
+        <p>Need assistance? Reach out to us for help.</p>
+        <a href="contact.html" class="card-button">Contact Now</a>
+    </div>
+</div>
+
+<div class="card-container stats-row">
+    <div class="card card-visitors">
+        <h3>No. of Visitors</h3>
+        <p>View how many people have visited the website.</p>
+        <span class="card-stat">12,345</span>
+    </div>
+    <div class="card card-solved">
+        <h3>No. of Grievances Solved</h3>
+        <p>Track how many grievances have been resolved successfully.</p>
+        <span class="card-stat">678</span>
+    </div>
+</div>
+<!--User Reviews-->
+<!-- User Reviews Section -->
+<div class="reviews-section">
+    <h2>User Reviews</h2>
+    <div class="reviews-container">
+        <!-- Card 1 -->
+        <div class="review-card">
+            <div class="review-text">
+                <p>"This grievance system is incredibly helpful! I received a quick response to my issue. Great work!"</p>
+            </div>
+            <div class="reviewer-info">
+                <img src="assets/user1.jpg" alt="User 1" class="reviewer-img">
+                <p><strong>John Doe</strong></p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="review-card">
+            <div class="review-text">
+                <p>"Excellent platform for raising concerns. The interface is easy to use, and tracking is seamless."</p>
+            </div>
+            <div class="reviewer-info">
+                <img src="assets/user2.jpg" alt="User 2" class="reviewer-img">
+                <p><strong>Jane Smith</strong></p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="review-card">
+            <div class="review-text">
+                <p>"I appreciate how the grievance system kept me updated throughout the process. Highly recommended!"</p>
+            </div>
+            <div class="reviewer-info">
+                <img src="assets/user3.jpg" alt="User 3" class="reviewer-img">
+                <p><strong>Michael Lee</strong></p>
+            </div>
+        </div>
+
+        <!-- Additional Cards -->
+        <div class="review-card">
+            <div class="review-text">
+                <p>"A fantastic service! I had my issues resolved in no time. Kudos to the team!"</p>
+            </div>
+            <div class="reviewer-info">
+                <img src="assets/user4.jpg" alt="User 4" class="reviewer-img">
+                <p><strong>Emily Johnson</strong></p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-text">
+                <p>"User-friendly interface and excellent support! I’m very satisfied with my experience."</p>
+            </div>
+            <div class="reviewer-info">
+                <img src="assets/user5.jpg" alt="User 5" class="reviewer-img">
+                <p><strong>Chris Davis</strong></p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-text">
+                <p>"This platform makes it easy to voice concerns. Thank you for the quick resolutions!"</p>
+            </div>
+            <div class="reviewer-info">
+                <img src="assets/user6.jpg" alt="User 6" class="reviewer-img">
+                <p><strong>Alice Brown</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Section -->
+<!-- Feedback Section -->
+<div class="container">
+    <div class="feedback-section" id="feedback">
+        <h2>We Value Your Feedback</h2>
+        <div class="feedback-box">
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star-5" name="rating" value="5" />
+                        <label for="star-5" class="star">&#9733;</label>
+                        <input type="radio" id="star-4" name="rating" value="4" />
+                        <label for="star-4" class="star">&#9733;</label>
+                        <input type="radio" id="star-3" name="rating" value="3" />
+                        <label for="star-3" class="star">&#9733;</label>
+                        <input type="radio" id="star-2" name="rating" value="2" />
+                        <label for="star-2" class="star">&#9733;</label>
+                        <input type="radio" id="star-1" name="rating" value="1" />
+                        <label for="star-1" class="star">&#9733;</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button class="feedback-button" type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Footer of Website-->
+<footer class="footer">
+    <div class="footer-top">
+        <!-- Section 1: About Us -->
+        <div class="footer-section about">
+            <h4>About Us</h4>
+            <p>Our Grievance Monitoring System ensures transparency and efficiency in addressing public issues. We strive to provide a platform that encourages accountability.</p>
+            <p>Developed by Abhishek</p>
+        </div>
+
+        <!-- Section 2: Quick Links -->
+        <div class="footer-section links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register Grievance</a></li>
+                <li><a href="tracking.html">Track Grievance</a></li>
+                <li><a href="#" id="login-btn2">Login</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Newsletter -->
+        <div class="footer-section newsletter">
+            <h4>Subscribe to Our Newsletter</h4>
+            <p>Get the latest updates and insights directly in your inbox.</p>
+            <form action="#" class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button class="Newsletter-button" type="submit">Subscribe</button>
+            </form>
+        </div>
+
+         <!-- Section 4: Contact Us with FontAwesome Icons -->
+             <div class="footer-section contact">
+                  <h4>Contact Us</h4>
+                  <p><i class="fas fa-phone"></i> Phone: +91 1234567890</p>
+                  <p><i class="fas fa-envelope"></i> Email: support@grievanceportal.com</p>
+                 <p><i class="fas fa-map-marker-alt"></i> Address: New Delhi, India</p>
+               <div class="social-links">
+                 <a href="#"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#"><i class="fab fa-twitter"></i></a>
+                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="#"><i class="fab fa-instagram"></i></a>
+               </div>
+             </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Public Grievance Monitoring System | All Rights Reserved </p>
+    </div>
+</footer>
+
+    
+
+    
+    
+    <script src="javascript/script.js">
+
+    </script>
+  
+</body>
+</html>

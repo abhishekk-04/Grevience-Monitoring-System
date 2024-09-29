@@ -1,0 +1,924 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.header
+{
+    text-align: center;
+    margin: auto;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 1.5em;
+    
+}
+.topnav {
+  overflow: hidden;
+  background-color: #007bff;
+  justify-content: space-between;
+}
+ .activa {
+  background-color: #005eff;
+  color: black;
+  border-radius: 5px;
+}
+/* Initial state for active link */
+.activa {
+  position: relative; /* Positioning context for animation */
+  /* Change color for active link */
+}
+
+/* Animation effect */
+.activa::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px; /* Height of the underline */
+  background-color: #ff9800; /* Color of the underline */
+  bottom: -4px; /* Position it below the text */
+  left: 0;
+  transform: scaleX(0); /* Start with scale 0 */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Make the active link's underline visible */
+.activa:hover::after, .activa::after {
+  transform: scaleX(1); /* Scale to full width on hover or when active */
+}
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  border-radius: 5px;
+}
+
+
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+ 
+}
+
+@media screen and (max-width: 750px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+}
+
+.nav-links a {
+  transition: background 0.3s;
+}
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: for shadow effect */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Content */
+.content {
+  padding: 2rem;
+  text-align: center;
+}
+.popup-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-bottom: 1rem;
+  font-size: 24px;
+  color: #333;
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.popup-content input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.popup-content button {
+  background-color: #333;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+.popup-content button:hover {
+  background-color: #555;
+}
+
+/* Close button */
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Blur effect */
+.blurred {
+  filter: blur(5px);
+}
+
+/* Switch form link */
+.switch-form, .d-flex {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.switch-form a, .d-flex a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-form a:hover {
+  text-decoration: underline;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #f1f1f1;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: none;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: white;
+}
+
+/* Dark Mode Icon */
+.dark-mode-toggle img {
+  width: 27px;
+  height: 27px;
+  filter: invert(100%); /* White icon for dark background */
+  transition: filter 0.3s ease;
+}
+body.dark-mode .header {
+  background-color: #0056b3; /* Dark mode color */
+}
+body.dark-mode .topnav {
+  background-color: #0056b3; /* Dark mode color */
+}
+body.dark-mode .dark-mode-toggle {
+  background-color: #0056b3; /* Dark mode color */
+}
+body.dark-mode .activa {
+  background-color: #007bff; /* Dark mode color */
+}
+body.dark-mode .footer {
+  background: linear-gradient(135deg, #003482, #0056d5);
+}
+
+body.dark-mode .dark-mode-toggle img {
+  filter: invert(0%); /* Black icon for light background */
+}
+ /* Dark Mode Styles for Popup Content */
+ body.dark-mode .popup-content {
+  background-color: #333; /* Dark background for the popup */
+  color: #ffffff; /* Light text color */
+}
+body.dark-mode .popup-content label {
+  
+  color: #ffffff; /* Light text color */
+}
+body.dark-mode .popup-content a {
+  
+  color: #ffffff; /* Light text color */
+}
+body.dark-mode .popup-content h2 {
+  color: #ffffff; /* Light text color */
+}
+/* Dark Mode Styles for Close Button */
+body.dark-mode .close {
+  color: #ddd; /* Light close button color */
+}
+/* Dark Mode Styles for Inputs */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="email"] {
+  background-color: #555; /* Dark background for inputs */
+  color: #fff; /* Light text color */
+  border: 1px solid #777; /* Dark border */
+}
+body.dark-mode .popup button {
+  background-color: #007bff; /* Blue background for button in dark mode */
+}
+/* Dark Mode Hover Effect for Button */
+body.dark-mode .popup button:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+.dark-mode .fa {
+  color: #000000; /* Change icon color to black in dark mode */
+}
+.dark-mode .topnav a {
+  color: #000000; /* Change icon color to black in dark mode */
+}
+/* Dark Mode Styles for Links */
+body.dark-mode .switch-form a {
+  color: #90e0ef; /* Light link color */
+}
+.dark-mode .card:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); /* Darker shadow */
+}
+/* Dark Mode for User Review Section */
+body.dark-mode .reviews-section {
+  background-color: #222;  /* Darker background */
+  color: #f1f1f1;  /* Lighter text for better visibility */
+}
+/* Dark Mode for User Reviews Heading */
+body.dark-mode .reviews-section h2 {
+  color: #ffffff;  /* Bright white for the heading */
+}
+/* Dark Mode for Individual Review Cards */
+body.dark-mode .review-card {
+  background-color: #333;  /* Dark card background */
+  color: #f1f1f1;  /* Bright text for contrast */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);  /* Subtle light shadow */
+}
+
+/* Reviewer Info in Dark Mode */
+body.dark-mode .review-card .reviewer-info {
+  color: #e0e0e0;  /* Slightly brighter text for reviewer name */
+}
+
+/* Review Text in Dark Mode */
+body.dark-mode .review-text p {
+  color: #f5f5f5;  /* Lighter review text for readability */
+}
+/* Dark Mode Styling */
+body.dark-mode .feedback-section {
+  background-color: #222;
+  color: #f1f1f1;
+}
+body.dark-mode .feedback-section h2 {
+  color: #ffffff;  /* Bright white for the heading */
+}
+
+body.dark-mode .feedback-box {
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .form-group label {
+  color: #f1f1f1;
+}
+
+body.dark-mode .form-group input, 
+body.dark-mode .form-group textarea {
+  background-color: #444;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+  color: #aaa;
+}
+
+/* Star Rating in Dark Mode */
+body.dark-mode .star {
+  color: #555;  /* Gray stars */
+}
+
+body.dark-mode input[type="radio"]:checked ~ label {
+  color: #ffd700;  /* Golden stars when checked */
+}
+/* Dark Mode for Other Specific Elements */
+body.dark-mode .review-card .reviewer-info {
+  color: #ddd;
+}
+
+body.dark-mode .feedback-container label {
+  color: #ddd;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 700px) {
+  .dark-mode-toggle img {
+    display: inline; /* Hide the image */
+  }
+
+}
+
+
+
+img {
+  height: 100px;
+  width: 100px;
+}
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  width: 70%;
+  height: 38em;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Hide Slides Initially */
+.mySlides {
+  display: none;
+}
+
+/* Make Images Responsive */
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Caption Text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  background-color: rgba(0, 0, 0, 0.5);  /* Transparent background */
+  width: calc(100% - 32px);
+}
+
+/* Navigation Buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+  transform: translateY(-50%);  /* Center vertically */
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Dots for Navigation */
+.dot {
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.7s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Gallery */
+.gallery {
+min-height: 300px;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media screen and (max-width: 700px) {
+.prev, .next {
+    display: none;  /* Hide next/prev buttons */
+}
+.text {
+  padding: 4px 8px;
+  font-size: 12px;
+  bottom: 4px;
+  position: relative;
+  top: 0;
+  left: 8px;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 1px;
+}
+}
+
+/* Hide Dots on Extra Small Screens */
+@media screen and (max-width: 600px) {
+.dot {
+    display: none;
+}
+}
+
+/* Add this CSS for spacing */
+.gallery {
+  margin-bottom: 3em; /* Adjust this value to set the space between slideshow and cards */
+}
+
+.card-container {
+  display: flex;        /* Use Flexbox for horizontal alignment */
+  gap: 30px;           /* Increase space between cards */
+  flex-wrap: wrap;     /* Allow wrapping to next line if needed */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.card-container {
+  display: flex;        /* Use Flexbox for horizontal alignment */
+  gap: 4em;           /* Increase space between cards */
+  flex-wrap: wrap;     /* Allow wrapping to next line if needed */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.card {
+  border-radius: 8px;  /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  padding: 30px;       /* Increased inner padding for larger cards */
+  width: 400px;        /* Increased width for cards */
+  height: 200px;
+  text-align: center;  /* Center text inside card */
+  transition: transform 0.4s, box-shadow 0.3s; /* Animation on hover */
+  overflow: hidden;    /* Prevent overflow */
+}
+
+/* Individual Card Background Colors */
+.card-register {
+  background: #c8e3f9; /* Light blue background */
+}
+.card-login {
+  background: #a7e2a7; /* Light green background */
+}
+
+.card-contact {
+  background: #dec3a9; /* Light orange background */
+}
+.card-track {
+  background: #f4c3c3; /* Light red background */
+}
+.card-visitors {
+  background: #8787bc; /* Light purple background */
+}
+
+.card-solved {
+  background: #ad7691; /* Light pink background */
+}
+/* Styles for the bottom row of cards */
+.bottom-row, .stats-row {
+  margin-top: 30px; /* Space above these rows */
+  margin-bottom: 30px;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+.card h3 {
+  color: #333; /* Dark text for headings */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.card p {
+  color: #666; /* Lighter text for paragraph */
+  margin-bottom: 15px; /* Space below paragraph */
+}
+.card-stat {
+  font-size: 32px; /* Larger text for stats */
+  font-weight: bold;
+  color: #333;
+}
+.card-button {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text color */
+  padding: 10px 15px; /* Inner padding */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded button */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth color transition */
+}
+
+.card-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Responsive Design for card*/
+@media screen and (max-width: 600px) {
+  .card-container {
+      position: relative;
+      top: -9em;
+      flex-direction: column; /* Stack cards vertically on small screens */
+      align-items: center; /* Center align cards */
+  }
+}
+/*Footer CSS*/
+/* Footer General Styles */
+.footer {
+  background: linear-gradient(135deg, #0052cc, #0066ff); /* Gradient background */
+  color: #fff;
+  padding: 50px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Individual Footer Sections */
+.footer-section {
+  flex: 1 1 250px;
+  margin: 20px;
+}
+
+.footer-section h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+/* Newsletter Form */
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  width: 70%;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #ff8533;
+}
+
+/* Contact Section Social Links */
+.social-links a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 22px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff6600;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #003380;
+  padding: 15px 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 16px;
+  color: #bbb;
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 768px) {
+  .footer-top {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      margin: 20px 0;
+      text-align: center;
+  }
+
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+/*User review css*/
+/* Reviews Section */
+.reviews-section {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f4f4f4;  /* Light background for contrast */
+}
+
+.reviews-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.reviews-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;  /* Wrap cards on smaller screens */
+  gap: 20px;        /* Space between cards */
+}
+
+/* Individual Review Card */
+.review-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;       /* Start with opacity 0 for animation */
+  transform: translateX(50px); /* Start slightly off to the right */
+  animation: float-in 0.5s forwards; /* Apply animation */
+}
+
+/* Animation keyframes for floating effect */
+@keyframes float-in {
+  to {
+      opacity: 1;              /* End with full opacity */
+      transform: translateX(0); /* Move to original position */
+  }
+}
+
+/* Review Text */
+.review-text p {
+  font-size: 1.1em;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Reviewer Info (Image and Name) */
+.reviewer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviewer-img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.reviewer-info p {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .reviews-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* Add delay to each card's animation */
+.review-card:nth-child(1) { animation-delay: 0s; }
+.review-card:nth-child(2) { animation-delay: 0.1s; }
+.review-card:nth-child(3) { animation-delay: 0.2s; }
+.review-card:nth-child(4) { animation-delay: 0.3s; }
+.review-card:nth-child(5) { animation-delay: 0.4s; }
+.review-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* Feedback Section */
+.feedback-section {
+  text-align: center;
+  padding: 40px 20px;                  /* Increased padding for a spacious look */
+  background-color: #f8f9fa;            /* Soft light background for contrast */
+  border-radius: 12px;                   /* Slightly larger rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for more depth */
+  margin: 20px auto;                     /* Center with margin for spacing */
+}
+
+/* Section Title */
+.feedback-section h2 {
+  font-size: 2.5em;                      /* Larger font size for emphasis */
+  margin-bottom: 25px;                   /* More space below the title */
+  color: #343a40;                        /* Darker color for better readability */
+  font-weight: 600;                      /* Slightly bolder text */
+}
+
+/* Feedback Box Styles */
+.feedback-box {
+  background-color: white;               /* White background for the box */
+  border-radius: 8px;                   /* Slight rounding for the box */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the box */
+  padding: 30px;                         /* Generous padding */
+  margin: 0 auto;                        /* Center the box */
+  max-width: 450px;                     /* Set a max width for the box */
+}
+
+/* Form Group Styles */
+.feedback-section .form-group {
+  margin-bottom: 20px;                   /* More space between form fields */
+}
+
+/* Form Labels */
+.feedback-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;                     /* Medium weight for labels */
+  color: #495057;                       /* Dark gray color for better contrast */
+}
+
+/* Input and Textarea Styles */
+.feedback-section input, 
+.feedback-section textarea {
+  width: 100%;                          /* Full width inputs */
+  padding: 12px;                       /* Padding for comfort */
+  border: 1px solid #ced4da;           /* Soft border */
+  border-radius: 5px;                  /* Rounding the corners */
+  box-sizing: border-box;               /* Include padding and border in the total width */
+  font-size: 1em;                       /* Consistent font size */
+}
+
+/* Star Rating Styles */
+.star-rating {
+  direction: rtl;                       /* Reverse for easier visual alignment */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;                 /* Space below star rating */
+}
+
+.star-rating input {
+  display: none;                        /* Hide radio buttons */
+}
+
+.star-rating label {
+  font-size: 28px;                     /* Size of stars */
+  color: #ccc;                         /* Default star color */
+  cursor: pointer;                     /* Pointer cursor for interactivity */
+  transition: color 0.2s ease;         /* Smooth color transition */
+}
+
+.star-rating input:checked ~ label {
+  color: #f39c12;                      /* Color of selected stars */
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #f39c12;                      /* Color on hover */
+}
+
+/* Submit Button Styles */
+.feedback-section button {
+  background-color: #28a745;           /* Blue button color */
+  color: white;                        /* White text color */
+  padding: 12px 20px;                  /* Comfortable padding */
+  border: none;                        /* No border */
+  border-radius: 5px;                  /* Rounded corners */
+  cursor: pointer;                     /* Pointer cursor */
+  font-size: 1em;                      /* Consistent font size */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.feedback-section button:hover {
+  background-color: #208738;           /* Darker blue on hover */
+  transform: translateY(-2px);         /* Lift effect on hover */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .feedback-box {
+      max-width: 90%;                   /* Adjust width on smaller screens */
+  }
+
+  .feedback-section h2 {
+      font-size: 2em;                   /* Responsive font size */
+  }
+}
+body, input, button {
+  transition: background-color 01s, color 1s;
+}
